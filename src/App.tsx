@@ -1,9 +1,10 @@
-function App() {
-  return (
-    <>
-      <div className="text-2xl text-blue-500"> TEST</div>
-    </>
-  );
-}
+import { BrowserRouter } from "react-router-dom";
+import { RouterConfig } from "./router/RouterConfig";
 
-export default App;
+export const App = () => {
+  return (
+    <BrowserRouter>
+      <RouterConfig />
+    </BrowserRouter>
+  );
+};

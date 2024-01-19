@@ -1,7 +1,7 @@
 import liff from "@line/liff";
 import { useEffect, useState } from "react";
 
-export const TestLineApp = () => {
+export const App = () => {
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
