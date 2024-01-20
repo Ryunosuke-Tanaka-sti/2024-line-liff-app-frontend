@@ -1,4 +1,4 @@
-import { useAuth } from "../hooks/useAuth";
+import { useAuth } from "@hooks/useAuth";
 
 export const TopPage = () => {
   const { isProfileLoading, profile, accessToken } = useAuth();

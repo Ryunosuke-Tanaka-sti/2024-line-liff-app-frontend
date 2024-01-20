@@ -35,11 +35,26 @@ module.exports = {
         },
         pathGroups: [
           // 指定した順番にソートされる
-          // {
-          //   pattern: "@/components/common",  // パターン
-          //   group: "internal",               // グループ名
-          //   position: "before",              // どの位置に挿入するか
-          // },
+          {
+            pattern: "@hooks/*", // パターン
+            group: "internal", // グループ名
+            position: "before", // どの位置に挿入するか
+          },
+          {
+            pattern: "@utilities/*", // パターン
+            group: "parent", // グループ名
+            position: "after", // どの位置に挿入するか
+          },
+          {
+            pattern: "@components/*", // パターン
+            group: "object", // グループ名
+            position: "after", // どの位置に挿入するか
+          },
+          {
+            pattern: "@types/*", // パターン
+            group: "type", // グループ名
+            position: "before", // どの位置に挿入するか
+          },
         ],
       },
     ],
