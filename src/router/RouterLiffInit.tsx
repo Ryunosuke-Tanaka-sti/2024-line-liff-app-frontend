@@ -12,6 +12,8 @@ export const RouterLiffInit = (props: Props) => {
 
   const [liffInit, setLiffInit] = useState<boolean>(false);
 
+  const isInLineClient = liff.isInClient();
+
   useEffect(() => {
     liff
       .init({
@@ -28,6 +30,9 @@ export const RouterLiffInit = (props: Props) => {
   });
   if (!liffInit) {
     return <>Loading now</>;
+  }
+  if (!isInLineClient) {
+    return <>Please open in LINE ここでQRの画像を出すのはありでは？</>;
   }
   return <>{children}</>;
 };
