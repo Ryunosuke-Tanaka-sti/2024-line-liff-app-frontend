@@ -1,7 +1,7 @@
 import { useAuth } from "@hooks/useAuth";
 
 export const TopPage = () => {
-  const { isProfileLoading, profile, accessToken } = useAuth();
+  const { isProfileLoading, profile, accessToken, idToken } = useAuth();
 
   if (isProfileLoading) return <>Loading now</>;
   if (!profile) return <>Please login</>;
@@ -12,6 +12,7 @@ export const TopPage = () => {
       <img src={profile.pictureUrl} alt="" />
       ようこそ
       {accessToken}
+      {idToken}
     </>
   );
 };
