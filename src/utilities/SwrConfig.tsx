@@ -1,5 +1,4 @@
 import { useErrorBoundary } from "react-error-boundary";
-
 import { SWRConfig } from "swr";
 
 type Props = {

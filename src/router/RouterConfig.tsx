@@ -1,6 +1,6 @@
+import { ParentLayout } from "@pages/layouts/ParentLayout";
 import { NotFoundPage } from "@pages/NotfoundPage";
 import { TopPage } from "@pages/TopPage";
-import { ParentLayout } from "@pages/layouts/ParentLayout";
 import { Route, Routes } from "react-router-dom";
 
 export const RouterConfig = () => {

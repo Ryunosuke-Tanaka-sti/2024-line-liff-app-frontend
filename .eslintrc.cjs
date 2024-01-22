@@ -6,13 +6,11 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     "plugin:tailwindcss/recommended",
-    "import",
-    "unused-imports",
     "prettier",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh", "tailwindcss"],
+  plugins: ["react-refresh", "import", "unused-imports", "tailwindcss"],
   rules: {
     "unused-imports/no-unused-imports": "error",
     "import/order": [
@@ -42,7 +40,7 @@ module.exports = {
           },
           {
             pattern: "@utilities/*", // パターン
-            group: "parent", // グループ名
+            group: "object", // グループ名
             position: "after", // どの位置に挿入するか
           },
           {

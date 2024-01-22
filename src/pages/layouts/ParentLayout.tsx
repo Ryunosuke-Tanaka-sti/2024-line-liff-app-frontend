@@ -1,7 +1,8 @@
 import { Outlet } from "react-router-dom";
-import { SWRConfig } from "swr";
-import { ErrorBoundaryComponent } from "../../utilities/ErrorBoundary";
-import { LiffInit } from "../../utilities/LiffInit";
+
+import { ErrorBoundaryComponent } from "@utilities/ErrorBoundary";
+import { LiffInit } from "@utilities/LiffInit";
+import { SWRConfigComponent } from "@utilities/SwrConfig";
 
 export const ParentLayout = () => {
   return (
@@ -9,11 +10,11 @@ export const ParentLayout = () => {
       <section className="">
         <main>
           <ErrorBoundaryComponent>
-            <SWRConfig>
+            <SWRConfigComponent>
               <LiffInit>
                 <Outlet />
               </LiffInit>
-            </SWRConfig>
+            </SWRConfigComponent>
           </ErrorBoundaryComponent>
         </main>
       </section>
