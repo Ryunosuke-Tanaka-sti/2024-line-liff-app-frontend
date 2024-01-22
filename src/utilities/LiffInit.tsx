@@ -6,7 +6,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-export const RouterLiffInit = (props: Props) => {
+export const LiffInit = (props: Props) => {
   const { children } = props;
   const { showBoundary } = useErrorBoundary();
 
