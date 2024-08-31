@@ -9,6 +9,9 @@ jobs:
   build_and_deploy_job:
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    environment: LIFF
+    env:
+      VITE_LIFF_ID: ${{ secrets.LIFF }}
     steps:
       - uses: actions/checkout@v3
         with:

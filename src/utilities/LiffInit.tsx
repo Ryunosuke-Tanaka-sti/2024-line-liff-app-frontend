@@ -10,7 +10,6 @@ export const LiffInit = (props: Props) => {
   const { children } = props;
   const { showBoundary } = useErrorBoundary();
   const [isInLineClient, setIsInLineClient] = useState<boolean>(false);
-
   const [liffInit, setLiffInit] = useState<boolean>(false);
 
   useEffect(() => {
