@@ -9,10 +9,9 @@ type Props = {
 export const LiffInit = (props: Props) => {
   const { children } = props;
   const { showBoundary } = useErrorBoundary();
+  const [isInLineClient, setIsInLineClient] = useState<boolean>(false);
 
   const [liffInit, setLiffInit] = useState<boolean>(false);
-
-  const isInLineClient = liff.isInClient();
 
   useEffect(() => {
     liff
@@ -21,6 +20,7 @@ export const LiffInit = (props: Props) => {
       })
       .then(() => {
         setLiffInit(true);
+        setIsInLineClient(liff.isInClient());
         console.log("LIFF init succeeded.");
       })
       .catch((e: Error) => {
