@@ -1,9 +1,8 @@
+import liff from "@line/liff";
 import { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import { useEffect, useState } from "react";
 import { useErrorBoundary } from "react-error-boundary";
 import { axiosClient } from "src/api/axiosClient";
-
-import { useAuth } from "@hooks/useAuth";
 
 type Props = {
   children: React.ReactNode;
@@ -14,13 +13,18 @@ export const AxiosConfig = (props: Props) => {
 
   const { showBoundary } = useErrorBoundary();
   const [isTokenSet, setIsTokenSet] = useState<boolean>(false);
-  const { accessToken } = useAuth();
+  const [accessToken, setAccessToken] = useState<string | null>();
+
+  useEffect(() => {
+    liff.ready.then(() => {
+      setAccessToken(liff.getAccessToken());
+    });
+  }, []);
 
   useEffect(() => {
     const requestInterceptor = axiosClient.interceptors.request.use(
       (config: InternalAxiosRequestConfig) => {
         config.headers["authorization"] = `Bearer ${accessToken}`;
-        console.log(accessToken);
         return config;
       },
       (error: AxiosError) => showBoundary(error)
