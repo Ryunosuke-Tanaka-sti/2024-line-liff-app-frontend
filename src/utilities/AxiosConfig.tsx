@@ -13,8 +13,8 @@ export const AxiosConfig = (props: Props) => {
   const { children } = props;
 
   const { showBoundary } = useErrorBoundary();
-  const { accessToken } = useAuth();
   const [isTokenSet, setIsTokenSet] = useState<boolean>(false);
+  const { accessToken } = useAuth();
 
   useEffect(() => {
     const requestInterceptor = axiosClient.interceptors.request.use(
