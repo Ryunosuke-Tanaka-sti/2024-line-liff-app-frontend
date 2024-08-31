@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 
+import { AxiosConfig } from "@utilities/AxiosConfig";
 import { ErrorBoundaryComponent } from "@utilities/ErrorBoundary";
 import { LiffInit } from "@utilities/LiffInit";
 import { SWRConfigComponent } from "@utilities/SwrConfig";
@@ -12,7 +13,9 @@ export const ParentLayout = () => {
           <ErrorBoundaryComponent>
             <SWRConfigComponent>
               <LiffInit>
-                <Outlet />
+                <AxiosConfig>
+                  <Outlet />
+                </AxiosConfig>
               </LiffInit>
             </SWRConfigComponent>
           </ErrorBoundaryComponent>

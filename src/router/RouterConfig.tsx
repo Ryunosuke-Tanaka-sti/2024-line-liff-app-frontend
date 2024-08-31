@@ -1,3 +1,4 @@
+import { DummyPage } from "@pages/DummyPage";
 import { ParentLayout } from "@pages/layouts/ParentLayout";
 import { NotFoundPage } from "@pages/NotfoundPage";
 import { TopPage } from "@pages/TopPage";
@@ -9,6 +10,7 @@ export const RouterConfig = () => {
       <Route path="/" element={<ParentLayout />}>
         <Route path="/" index element={<TopPage />} />
       </Route>
+      <Route path="dummy" element={<DummyPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

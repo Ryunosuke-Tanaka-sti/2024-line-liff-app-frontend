@@ -15,8 +15,9 @@ const ErrorFallback = ({ error, resetErrorBoundary }: FallbackProps) => {
   console.error(error);
   return (
     <>
-      <button className="" onClick={resetErrorBoundary}>
+      <button className="bg-slate-300" onClick={resetErrorBoundary}>
         リトライ
+        {error.message}
       </button>
     </>
   );

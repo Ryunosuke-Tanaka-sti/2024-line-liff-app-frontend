@@ -24,7 +24,7 @@
       "@pages/*": ["src/pages/*"],
       "@components/*": ["src/components/*"],
       "@utilities/*": ["src/utilities/*"],
-      "@types/*": ["src/types/*"],
+      "@own_types/*": ["src/types/*"],
       "@hooks/*": ["src/hooks/*"],
     },
   },
