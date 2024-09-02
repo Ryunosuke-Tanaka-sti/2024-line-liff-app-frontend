@@ -31,9 +31,9 @@ export const TopPage = () => {
   const [isLoadingCombat, setIsLoadingCombat] = useState(false);
 
   const onClickSubmitPrompt = async (data: PromptFormType) => {
-    console.log("Prompt submitted", data);
+    if (!enemyData) return;
     setIsLoadingCombat(true);
-    const result = await postBattle(data);
+    const result = await postBattle({ ...data, enemyID: enemyData.enemyID });
     setIsDuel(true);
     setCombatResult(result);
     mutateUser();
