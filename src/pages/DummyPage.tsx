@@ -1,3 +1,4 @@
+import { LoadingComponent } from "@components/common/LoadingComponent";
 import { CombatResult } from "@components/modules/DuelResult";
 import { PromptForm } from "@components/modules/PromptForm";
 import { PromptFormType } from "@own_types/PromptType";
@@ -17,7 +18,8 @@ export const DummyPage = () => {
   };
 
   return (
-    <main className="my-10 flex flex-col items-center gap-10 bg-slate-50">
+    <main className="relative my-10 flex flex-col items-center gap-10 bg-slate-50">
+      <LoadingComponent />
       <div className="flex w-full flex-col items-center gap-3 bg-slate-100 p-6">
         <span className="text-2xl font-bold">挑戦者：Dummy User</span>
         <img

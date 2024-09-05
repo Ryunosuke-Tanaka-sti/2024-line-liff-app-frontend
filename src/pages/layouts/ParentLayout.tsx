@@ -8,7 +8,7 @@ import { SWRConfigComponent } from "@utilities/SwrConfig";
 export const ParentLayout = () => {
   return (
     <>
-      <section className="">
+      <section className="relative">
         <main>
           <ErrorBoundaryComponent>
             <SWRConfigComponent>

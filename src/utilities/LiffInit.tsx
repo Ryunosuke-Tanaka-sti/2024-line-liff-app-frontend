@@ -1,3 +1,4 @@
+import { LoadingComponent } from "@components/common/LoadingComponent";
 import liff from "@line/liff";
 import { useEffect, useState } from "react";
 import { useErrorBoundary } from "react-error-boundary";
@@ -28,7 +29,7 @@ export const LiffInit = (props: Props) => {
       });
   });
   if (!liffInit) {
-    return <>Loading now</>;
+    return <LoadingComponent />;
   }
   if (!isInLineClient) {
     return <>Please open in LINE ここでQRの画像を出すのはありでは？</>;
