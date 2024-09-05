@@ -10,13 +10,13 @@ export const LoadingComponent = ({
 }: LoadingComponentProps) => {
   if (opacity) {
     return (
-      <section className="fixed left-0 flex h-lvh w-full items-center justify-center bg-[#F2F2F2] opacity-80">
+      <section className="fixed left-0 top-0 flex h-lvh w-full items-center justify-center bg-[#F2F2F2] opacity-80">
         <Player autoplay loop className="w-80  " src={loadingAnimation} />
       </section>
     );
   }
   return (
-    <section className="fixed left-0 flex h-lvh w-full items-center justify-center bg-[#F2F2F2] opacity-90">
+    <section className="fixed left-0 top-0 flex h-lvh w-full items-center justify-center bg-[#F2F2F2] opacity-90">
       <Player autoplay loop className="w-80  " src={loadingAnimation} />
     </section>
   );
