@@ -1,3 +1,4 @@
+import { LoadingComponent } from "@components/common/LoadingComponent";
 import liff from "@line/liff";
 import { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import { useEffect, useState } from "react";
@@ -46,6 +47,6 @@ export const AxiosConfig = (props: Props) => {
     };
   }, [accessToken, showBoundary]);
 
-  if (!isTokenSet) return <div>loading</div>;
+  if (!isTokenSet) return <LoadingComponent />;
   return <>{children}</>;
 };

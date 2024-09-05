@@ -51,15 +51,8 @@ export const TopPage = () => {
   if (isLoadingEnemyData || !enemyData) return <LoadingComponent />;
 
   return (
-    <main className="relative my-10 flex flex-col items-center gap-10 bg-slate-50">
-      <div
-        className={
-          "fixed flex items-center justify-center top-0 h-lvh w-screen bg-slate-500/80" +
-          (isLoadingCombat ? " left-0" : " -left-full")
-        }
-      >
-        <span className="text-white">Loading</span>
-      </div>
+    <main className="my-10 flex flex-col items-center gap-10 bg-slate-50">
+      {isLoadingCombat && <LoadingComponent opacity={true} />}
       <div className="flex w-full flex-col items-center gap-3 px-2 py-6">
         <span className="text-2xl font-bold">対戦相手：{enemyData.name}</span>
         <img
