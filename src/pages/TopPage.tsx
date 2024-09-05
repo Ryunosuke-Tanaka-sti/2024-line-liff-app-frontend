@@ -1,3 +1,4 @@
+import { LoadingComponent } from "@components/common/LoadingComponent";
 import { CombatResult } from "@components/modules/DuelResult";
 import { PromptForm } from "@components/modules/PromptForm";
 import { useState } from "react";
@@ -45,10 +46,9 @@ export const TopPage = () => {
     mutateEnemy();
   };
 
-  if (isProfileLoading) return <>Loading now</>;
-  if (!profile) return <>Please login</>;
-  if (isLoadingUser || !userData) return <>Loading now</>;
-  if (isLoadingEnemyData || !enemyData) return <>Loading now</>;
+  if (isProfileLoading || !profile) return <LoadingComponent />;
+  if (isLoadingUser || !userData) return <LoadingComponent />;
+  if (isLoadingEnemyData || !enemyData) return <LoadingComponent />;
 
   return (
     <main className="relative my-10 flex flex-col items-center gap-10 bg-slate-50">
