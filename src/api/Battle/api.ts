@@ -7,7 +7,7 @@ import { axiosClient } from "../axiosClient";
 import { sleep } from "@utilities/utilitiesLogic";
 
 export const postBattle = async (data: RequestPostBattleType) => {
-  const mockFlag = import.meta.env.VITE_LIFF_ID as boolean;
+  const mockFlag = import.meta.env.VITE_MOCK as boolean;
   if (mockFlag) {
     await sleep(2000);
     return dummyPostBattleResponse;
@@ -17,7 +17,7 @@ export const postBattle = async (data: RequestPostBattleType) => {
 };
 
 export const fetchEnemy = async () => {
-  const mockFlag = import.meta.env.VITE_LIFF_ID as boolean;
+  const mockFlag = import.meta.env.VITE_MOCK as boolean;
   if (mockFlag) {
     await sleep(2000);
     return dummyFetchEnemyResponse;

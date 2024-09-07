@@ -6,7 +6,7 @@ import { sleep } from "@utilities/utilitiesLogic";
 import type { UserType } from "./type";
 
 export const fetchReadUser = async () => {
-  const mockFlag = import.meta.env.VITE_LIFF_ID as boolean;
+  const mockFlag = import.meta.env.VITE_MOCK as boolean;
   if (mockFlag) {
     await sleep(2000);
     return dummyFetchUser;
