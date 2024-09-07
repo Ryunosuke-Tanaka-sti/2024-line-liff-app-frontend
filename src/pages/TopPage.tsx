@@ -30,9 +30,14 @@ export const TopPage = () => {
   });
 
   const [isLoadingCombat, setIsLoadingCombat] = useState(false);
+  const [promptForm, setPromptForm] = useState<PromptFormType>({
+    name: "",
+    prompt: "",
+  });
 
   const onClickSubmitPrompt = async (data: PromptFormType) => {
     if (!enemyData) return;
+    setPromptForm(data);
     setIsLoadingCombat(true);
     const result = await postBattle({ ...data, enemyID: enemyData.enemyID });
     setIsDuel(true);
@@ -81,7 +86,7 @@ export const TopPage = () => {
           </>
         ) : (
           <PromptForm
-            promptContent={{ name: "", prompt: "" }}
+            promptContent={promptForm}
             onClickSubmit={onClickSubmitPrompt}
           />
         )}
