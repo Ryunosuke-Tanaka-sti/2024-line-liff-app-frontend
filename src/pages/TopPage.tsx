@@ -39,11 +39,19 @@ export const TopPage = () => {
     setCombatResult(result);
     mutateUser();
     setIsLoadingCombat(false);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
   const onClickSubmitNextBattle = () => {
     setIsDuel(false);
     setCombatResult({ winner: "system", combatLogs: [] });
     mutateEnemy();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   if (isProfileLoading || !profile) return <LoadingComponent />;

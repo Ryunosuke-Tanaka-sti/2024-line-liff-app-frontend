@@ -1,6 +1,8 @@
+import { EnemyType } from "@own_types/PromptType";
+
 import { CombatLogType } from "./type";
 
-export const postBattle: CombatLogType = {
+export const dummyPostBattleResponse: CombatLogType = {
   winner: "user",
   combatLogs: [
     {
@@ -29,4 +31,10 @@ export const postBattle: CombatLogType = {
         "ボクシングチャンピオンが全力でパンチを放ち、教官の防御を打ち破ることに成功しました。教官はその一撃で膝をつきました。",
     },
   ],
+};
+
+export const dummyFetchEnemyResponse: EnemyType = {
+  enemyID: "1",
+  name: "訓練場の教官",
+  imageUrl: "https://picsum.photos/200/200",
 };

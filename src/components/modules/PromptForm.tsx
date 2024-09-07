@@ -55,7 +55,10 @@ export const PromptForm = (props: PromptFormProps) => {
       className="flex w-full flex-col gap-2"
     >
       <label className="flex w-full flex-col">
-        <span className="text-sm font-bold">挑戦者の名前</span>
+        <ul className="flex flex-row items-center justify-between text-sm font-bold">
+          <li>挑戦者の名前</li>
+          <li className="px-2 text-xs text-red-500">*必須</li>
+        </ul>
         <input
           className="p-1"
           type="text"
@@ -73,7 +76,10 @@ export const PromptForm = (props: PromptFormProps) => {
         </span>
       </label>
       <label className="flex w-full flex-col">
-        <span className="text-sm font-bold">特徴・武器</span>
+        <ul className="flex flex-row items-center justify-between text-sm font-bold">
+          <li>特徴・武器</li>
+          <li className="px-2 text-xs text-red-500">*必須</li>
+        </ul>
         <textarea
           className="h-72 p-1"
           {...register("prompt", {
@@ -83,7 +89,7 @@ export const PromptForm = (props: PromptFormProps) => {
               message: "300文字以内で入力してください。",
             },
           })}
-          placeholder="ここは極力入力いただいたほうが精度が高まります。"
+          placeholder="ここを埋めることで、対戦相手によりリアルな戦闘が提供されます。"
         />
         <span className="flex min-h-5 items-center text-xs text-red-300">
           {ErrorPromptContent}
