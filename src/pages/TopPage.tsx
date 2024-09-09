@@ -22,6 +22,7 @@ export const TopPage = () => {
     data: enemyData,
     isLoading: isLoadingEnemyData,
     mutate: mutateEnemy,
+    isValidating: isValidatingEnemy,
   } = useEnemy();
   const [isDuel, setIsDuel] = useState(false);
   const [combatResult, setCombatResult] = useState<CombatLogType>({
@@ -43,16 +44,16 @@ export const TopPage = () => {
     setIsDuel(true);
     setCombatResult(result);
     mutateUser();
-    setIsLoadingCombat(false);
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
+    setIsLoadingCombat(false);
   };
   const onClickSubmitNextBattle = () => {
+    mutateEnemy();
     setIsDuel(false);
     setCombatResult({ winner: "system", combatLogs: [] });
-    mutateEnemy();
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -65,7 +66,8 @@ export const TopPage = () => {
 
   return (
     <main className="flex flex-col items-center gap-10 bg-slate-50 py-10">
-      {isLoadingCombat && <LoadingComponent opacity={true} />}
+      {isLoadingCombat ||
+        (isValidatingEnemy && <LoadingComponent opacity={true} />)}
       <div className="flex w-full flex-col items-center gap-3 px-2 py-6">
         <span className="text-2xl font-bold">対戦相手：{enemyData.name}</span>
         <img
