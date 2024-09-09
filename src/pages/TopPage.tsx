@@ -66,8 +66,9 @@ export const TopPage = () => {
 
   return (
     <main className="flex flex-col items-center gap-10 bg-slate-50 py-10">
-      {isLoadingCombat ||
-        (isValidatingEnemy && <LoadingComponent opacity={true} />)}
+      {(isLoadingCombat || isValidatingEnemy) && (
+        <LoadingComponent opacity={true} />
+      )}
       <div className="flex w-full flex-col items-center gap-3 px-2 py-6">
         <span className="text-2xl font-bold">対戦相手：{enemyData.name}</span>
         <img
