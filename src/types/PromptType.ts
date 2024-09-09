@@ -8,3 +8,10 @@ export type EnemyType = {
   name: string;
   imageUrl: string;
 };
+
+export type EnemyPromptFormType = {
+  name: string;
+  prompt: string;
+  originalContentUrl: string;
+  previewImageUrl: string;
+};
