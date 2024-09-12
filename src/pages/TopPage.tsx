@@ -70,7 +70,11 @@ export const TopPage = () => {
         <LoadingComponent opacity={true} />
       )}
       <div className="flex w-full flex-col items-center gap-3 px-2 py-6">
-        <span className="text-2xl font-bold">対戦相手：{enemyData.name}</span>
+        <span className="text-2xl font-bold">
+          対戦チャンピオン
+          <span />
+          <span className="text-2xl font-bold"> {enemyData.name}</span>
+        </span>
         <img
           src={enemyData.imageUrl}
           className="h-auto w-full object-contain"
