@@ -1,4 +1,5 @@
 import { DummyPage } from "@pages/DummyPage";
+import { EnemyPromptPage } from "@pages/EnemyPromptPage";
 import { ParentLayout } from "@pages/layouts/ParentLayout";
 import { NotFoundPage } from "@pages/NotfoundPage";
 import { TopPage } from "@pages/TopPage";
@@ -11,6 +12,7 @@ export const RouterConfig = () => {
         <Route path="/" index element={<TopPage />} />
       </Route>
       <Route path="dummy" element={<DummyPage />} />
+      <Route path="enemy" element={<EnemyPromptPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
